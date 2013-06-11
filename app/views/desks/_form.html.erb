@@ -1,0 +1,20 @@
+<div class="form">
+<%= form_for @desk do |f| %>
+  <%#= f.collection_select :group_id, Group.order(:name), :id, :name, {:prompt => "Группа"} %>
+  <p>
+    <%= f.label :group_id, "Группа #{required_filed}".html_safe %>
+    <%= autocomplete_field :group_id , :group_name, autocomplete_group_name_desks_path %>
+  </p>
+  <p>
+    <%= f.label :title, "Заголовок (тема) #{required_filed}".html_safe %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Пост" %>
+    <%= f.text_area :body %>
+  </p>
+
+  <%= f.submit "Отправить", :class => "btn btn-success" %>
+<% end %>
+</div>

@@ -1,0 +1,27 @@
+<div class="span3 bs-docs-sidebar">
+  <% if can? :create, Message %>
+   <%= link_to "Отправить СМС", new_message_path, :class => "btn btn-success sdvig"  %>
+  <% end %>
+  <% if can? :create, Desk %>
+   <%= link_to "Написать объявление", new_desk_path, :class => "btn btn-warning sdvig"  %>
+  <% end %>
+  <ul class="nav nav-list bs-docs-sidenav affix-top">              
+    <% if current_user and current_user.admin? %>
+      <li class="nav-header">Администрирование</li>
+      <li><%= link_to "Студенты", students_path %></li>
+      <li><%= link_to "Пользователи", users_path %></li>
+      <li><%= link_to "Группы", groups_path %></li>
+      <li><%= link_to "Сообщения", messages_path %></li>
+      <li><%= link_to "Доска объявлений", desks_path %></li>
+      <li><%= link_to "Страницы", pages_path %></li>
+      <li><%= link_to "feedback (#{Order.count})", orders_path %></li>
+      <li><%= link_to "Логи", logs_path %></li>
+    <% end %>
+  
+    <% if current_user and current_user.warden? %>
+      <li class="nav-header">Управление</li>
+      <li><%= link_to "Группы", groups_path %></li>
+      <li><%= link_to "Студенты", students_path %></li>
+    <% end %>
+  </ul>
+</div><!--/span-->

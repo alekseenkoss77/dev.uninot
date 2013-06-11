@@ -1,0 +1,10 @@
+<div class="form">
+  <%= form_for @group do |f| %>
+    <p>
+      <%= f.label :name, "Название" %>
+      <%= f.text_field :name %>
+    </p>
+
+    <%= f.submit "Отправить", :class => "btn btn-success" %>
+  <% end %>
+</div>

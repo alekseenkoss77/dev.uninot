@@ -1,0 +1,36 @@
+<h1>Регистрация</h1>
+<div class="form">
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :name, "Имя" %>
+  <%= f.text_field :name, :autofocus => true %></div>
+
+  <div><%= f.label :email %>
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :telephone %>
+  <%= f.text_field :telephone %></div>
+
+  <div class="select-role">
+   <!-- Староста <input type="radio" name="sel" value="warden" id="warden">
+   Преподаватель <input type="radio" name="sel" value="teacher" id="teacher"> -->
+   Староста <%= f.radio_button :role, "warden" %>
+   Преподаватель <%= f.radio_button :role, "teacher" %>
+  </div>
+  <br/>
+  
+  <div class="warden-group">
+    <%= f.collection_select :group_id, Group.order(:name), :id, :name, {:prompt => "Группа"}, :class => "invise", :id => "wardengroup" %>
+  </div>
+
+  <div><%= f.label :password, "Пароль" %>
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation, "Подтверждение пароля" %>
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Зарегистрироваться", :class => "btn btn-success" %></div>
+<% end %>
+</div>
+<%#= render "devise/shared/links" %>

@@ -1,0 +1,38 @@
+<h1>Пользователи</h1>
+
+<% if can? :create, User %>
+  <div class="new">
+    <%= link_to "Добавить пользователя", new_user_registration_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>Имя</td>
+    <th>E-mail</td>
+    <th>Телефон</td>
+    <th>Роль</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.telephone %></td>
+        <td>
+          <%= "Администратор" if user.admin? %>
+          <%= "Преподаватель" if user.teacher? %>
+          <%= "Староста" if user.warden? %>
+        </td>
+        
+        <td>
+          <%= link_to "Изменить", edit_user_path(user.id), :class => "btn btn-mini btn-success" %> 
+          <%= link_to "Удалить", user_path(user.id), :method => :delete , :class => "btn btn-mini btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+<h1>Страницы</h1>
+
+<% if can? :create, Student %>
+  <div class="new">
+    <%= link_to "Добавить страницу", new_page_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th width="330">Название</td>
+    <th width="330">Слаг</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.id %></td>
+        <td><%= page.name %></td>
+        <td><%= page.slug %></td>
+        <td>
+          <%= link_to "Изменить", edit_page_path(page.id), :class => "btn btn-mini btn-success" %> 
+          <%= link_to "Удалить", page_path(page.id), :class => "btn btn-mini btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

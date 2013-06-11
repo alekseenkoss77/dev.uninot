@@ -1,0 +1,26 @@
+<h1>Обратная связь</h1>
+<div class="form">
+  <%= form_for @order do |f| %>
+    <p>
+      <%= f.label :name, "Имя, Фамилия #{required_filed}".html_safe %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :email, "E-mail" %>
+      <%= f.email_field :email %>
+    </p>
+    <p>
+      <%= f.select :role, ["Студент", "Преподаватель", "Староста"], :prompt => "Статус" %>
+      <%= required_filed.html_safe %>
+    </p>
+    <p class="order_group" id="order_group_p">
+      <%= f.label :group, "Группа" %>
+      <%= f.text_field :group, :class => "invise" %>
+    </p>
+    <p>
+      <%= f.label :body, "Проблема #{required_filed}".html_safe %>
+      <%= f.text_area :body %>
+    </p>
+    <%= f.submit "Отправить", :class => "btn btn-success" %>
+  <% end %>
+</div>

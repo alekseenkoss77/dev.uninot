@@ -1,0 +1,31 @@
+<h1>СМС сообщения</h1>
+
+<% if can? :create, Message %>
+  <div class="new">
+    <%= link_to "Отправить смс", new_message_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>Группа</th>
+    <th>Отправитель</th>
+    <th>Текст сообщения</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.group.name if message.group %></td>
+        <td><%= message.user.name if message.user %></td>
+        <td><%= message.body %></td>
+        <td>
+          <%#= link_to "Изменить", edit_message_path(message.id), :class => "btn btn-mini btn-success" %> 
+          <%= link_to "Удалить", message_path(message.id), :method => :delete,  :class => "btn btn-mini btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

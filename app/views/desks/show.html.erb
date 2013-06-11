@@ -1,0 +1,27 @@
+<h1>Просмотр поста</h1>
+<table class="table">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="gray">Заголовок поста</td>
+      <td><%= @desk.title %></td>
+    </tr>
+    <tr>
+      <td class="gray">Группа поста</td>
+      <td><%= @desk.group.name if @desk.group %></td>
+    </tr>
+    <tr>
+      <td class="gray">Содержимое</td>
+      <td><%= @desk.body.html_safe %></td>
+    </tr>
+    <tr>
+      <td class="gray">Дата публикации</td>
+      <td><%= Russian::strftime(@desk.created_at, "%d / %B / %Y - %H : %M") %></td>
+    </tr>
+    <tr>
+      <td class="gray">Автор</td>
+      <td><%= (@desk.user.name || @desk.user.email) if @desk.user %></td>
+    </tr>
+  </tbody>
+</table>

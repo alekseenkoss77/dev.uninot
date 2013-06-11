@@ -1,0 +1,14 @@
+<div class="form"> 
+<%= form_for @message do |f| %>
+    <%#= f.collection_select :group_id, Group.order(:name), :id, :name, {:prompt => "Группа"} %>
+  <p>
+    <%= f.label :group_id, "Группа #{required_filed}".html_safe %>
+    <%= autocomplete_field :group_id , :group_name, autocomplete_group_name_messages_path %>
+  </p>
+  <p>
+    <%= f.label :body, "Текст сообщения" %>
+    <%= f.text_field :body %>
+  </p>
+    <%= f.submit "Отправить", :class => "btn btn-success" %>
+<% end %>
+</div>

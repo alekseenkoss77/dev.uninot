@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name, "Фамилия Имя Отчество" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email, "Фамилия Имя Отчество" %>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :telephone, "Контактный телефон" %>
+    <%= f.text_field :telephone %>
+  </p>
+
+  <p>
+    <%= f.select :role, User::ROLES  %>
+  </p>
+
+  <%= f.submit "Отправить", :class => "btn btn-success" %>
+<% end %>

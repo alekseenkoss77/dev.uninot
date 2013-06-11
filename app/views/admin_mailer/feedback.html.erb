@@ -1,0 +1,11 @@
+<h2>Новый feedback</h2>
+<p>От кого: <%= @obj.name %></p>
+<p>E-mail: <%= @obj.email %></p>
+<p>
+  Кто это?: <%= @obj.role %>
+  <% if @obj.role %>
+    <%= @obj.group %>
+  <% end %>
+</p>
+Сообщение:
+<p><%= @obj.body %></p>

@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui
+ *= require bootstrap_and_overrides.css.less
+ */
+
+
+.form {
+  width: 400px;
+  margin-left: 230px;
+  padding: 20px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+}
+.red {color:red;}
+.new {
+  float: right;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+.table thead {
+  background: #F5F5F5;
+}
+
+.logo {
+  float:left;
+  width: 50px;
+  height: 50px;
+}
+
+.gray {
+  border: 1px solid white;
+  width: 200px;
+  background: #0CF;
+  color: white;
+}

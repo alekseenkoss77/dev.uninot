@@ -1,0 +1,17 @@
+<%= form_for @student do |f| %>
+  <p>
+    <%= f.label :name, "Фамилия Имя Отчество" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :telephone, "Контактный телефон" %>
+    <%= f.text_field :telephone %>
+  </p>
+
+  <p>
+    <%= f.collection_select :group_id, Group.order(:name), :id, :name, {:prompt => "Группа"} %>
+  </p>
+
+  <%= f.submit "Отправить", :class => "btn btn-success" %>
+<% end %>

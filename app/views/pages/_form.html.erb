@@ -1,0 +1,27 @@
+<%= form_for @page do |f| %>
+  <p>
+    <%= f.label :name, "Название" %>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= cktext_area :page, :body, :ckeditor => {:uiColor => "#00CCFF", :toolbar => "mini"} %>
+  </p>
+
+  <p>
+    <%= f.label :meta_title, "Мета - заголовок" %>
+    <%= f.text_field :meta_title %>
+  </p>
+
+  <p>
+    <%= f.label :meta_description, "Мета - описание" %>
+    <%= f.text_field :meta_description %>
+  </p>
+
+  <p>
+    <%= f.label :meta_keywords, "Мета - ключевые слова" %>
+    <%= f.text_field :meta_keywords %>
+  </p>
+
+  <%= f.submit "Отправить", :class => "btn btn-success" %>
+<% end %>

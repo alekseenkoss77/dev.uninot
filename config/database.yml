@@ -1,0 +1,30 @@
+# vkiem sms notifer database configuration
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: dev_uninot
+  pool: 5
+  username: root
+  password: 'Gkkkdro74hKhs22'
+  socket: /var/run/mysqld/mysqld.sock
+
+# test:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: sms-vkiem
+#   pool: 5
+#   username: root
+#   password: 'Gkkkdro74hKhs22'
+#   socket: /var/run/mysqld/mysqld.sock
+
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: sms-vkiem
+#   pool: 5
+#   username: root
+#   password: 'Gkkkdro74hKhs22'
+#   socket: /var/run/mysqld/mysqld.sock

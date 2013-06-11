@@ -1,0 +1,29 @@
+<h1>Посты на стене</h1>
+
+<% if can? :create, Desk %>
+  <div class="new">
+    <%= link_to "Добавить пост", new_desk_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>Пост</th>
+    <th>Группа</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @desks.each do |desk| %>
+      <tr>
+        <td><%= link_to desk.title, desk_path(desk.id) %></td>
+        <td><%= desk.group.name if desk.group %></td>
+        <td>
+          <%= link_to "Изменить", edit_desk_path(desk.id), :class => "btn btn-mini btn-success" if can? :update, Desk %> 
+          <%= link_to "Удалить", desk_path(desk.id), :method => :delete,  :class => "btn btn-mini btn btn-danger" if can? :delete, Desk %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

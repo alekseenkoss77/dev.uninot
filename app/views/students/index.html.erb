@@ -1,0 +1,40 @@
+<h1>Студенты</h1>
+<% if can? :create, Student %>
+    <div class="span4">
+      <%= form_tag import_students_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Импорт", :class => "btn btn-warning" %>
+      <% end %>
+    </div>
+    <div class="span4" style="float:right;">
+      <%= link_to "Добавить студента", new_student_path, :class => "btn btn-primary" %>
+    </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>Ф.И.О студента</td>
+    <th>Телефон</td>
+    <th>Группа</td>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.telephone %></td>
+        <td>
+          <% if student.group %>
+            <%= student.group.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Изменить", edit_student_path(student.id), :class => "btn btn-mini btn-success" if can? :update, Student %> 
+          <%= link_to "Удалить", student_path(student.id), :method => :delete, :class => "btn btn-mini btn btn-danger" if can? :delete, Student %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

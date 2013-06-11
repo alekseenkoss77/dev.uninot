@@ -1,0 +1,30 @@
+<h1>Обратная связь</h1>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th>Имя</th>
+    <th>Статус</th>
+    <th></th>
+    <th>Текст сообщения</th>
+    <th>Добавлено</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.role %></td>
+        <td><%= order.group %></td>
+        <td><%= order.body %></td>
+        <td><%= Russian::strftime(order.created_at,"%d.%m.%y  %H:%M") %></td>
+        <td>
+          <% if can? :delete, Order %>
+            <%= link_to "Удалить", order_path(order.id), :method => :delete,  :class => "btn btn-mini btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

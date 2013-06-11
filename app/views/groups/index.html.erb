@@ -1,0 +1,28 @@
+<h1>Группы</h1>
+
+<% if can? :create, Group %>
+  <div class="new">
+    <%= link_to "Добавить группу", new_group_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<table class="table">
+  <thead>
+    <th style="width: 710px;">Группа</th>
+
+    <th></th>
+  </thead>
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td>
+          <%= link_to "Изменить", edit_group_path(group.id), :class => "btn btn-mini btn-success" %> 
+          <%= link_to "Удалить", group_path(group.id), :method => :delete,  :class => "btn btn-mini btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+<h1>Доска объявлений</h1>
+
+
+<div class="desk">
+<%= form_tag "/desk" do %>
+  <%#= text_field_tag :group, "Группа", :class => "italian" %>
+  <%= autocomplete_field :group , :group_name, autocomplete_group_name_desks_path %>
+  <%= submit_tag "Найти", :class => "btn btn-success" %>
+<% end %>
+</div>
+
+<% if @desks %>
+  <hr/>
+  <% @desks.each do |desk| %>
+    <div class="posted">
+      <%= desk.user ? desk.user.name : "( непаняятна )" %>
+    </div>
+    <div class="desk-message">
+      <div class="triangle"></div>
+      <div class="header"><%= desk.title %></div>
+      <div class="txt"><%= raw desk.body %></div>
+      <br/>
+      <p class="time"><%= human_date(desk.created_at) %></p>
+    </div>
+  <% end %>
+<% end %>
+<div class="clear"></div>

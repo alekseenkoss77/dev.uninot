@@ -1,0 +1,253 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot?v=3.0.2");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot?#iefix&v=3.0.2");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff?v=3.0.2");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf?v=3.0.2");
+
+@import "fontawesome";
+html, body {
+  height: 100%;
+}
+// footer {
+//   color: white;
+//   background: #7C7C7C;
+//   padding-top: 5px;
+//   height: 58px;
+//   text-align: center;
+// }
+// footer a {
+//   color: #999;
+// }
+// footer a:hover {
+//   color: #efefef;
+// }
+.container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -63px;
+}
+.push {
+  height: 63px;
+}
+
+.row {
+  margin-top: 55px;
+}
+
+.navbar-fixed-top .navbar-inner {
+  background: #0CF;
+}
+.navbar-fixed-top .navbar-inner a {
+  color: white;
+}
+
+.navbar .nav > li > a {
+  color: white;
+  text-shadow: none;
+}
+.navbar .nav > li > a:hover {
+  background: white; 
+  color: #0CF;
+}
+
+.well {
+  padding: 0;
+}
+
+.well h3 {
+  font-size: 17px;
+  background: #00CCFF;
+  color: white;
+  padding-left: 20px;
+}
+
+h1 {
+  font-size: 20px;
+  padding-top: 0px;
+  border-bottom: 2px solid #AACFEC;
+}
+
+.add_student {
+  width: 100%;
+}
+.import {
+  float: left;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+.sdvig {
+  width: 80%;
+  margin: 10px;
+}
+
+.invise {
+  display: none;
+}
+
+.desk {
+  margin-left: 25%;
+}
+.desk input {
+  margin-right: 3px;
+}
+.desk .btn.btn-success {
+  width: 120px;
+  margin-top: -10px;
+}
+.italian {
+  color: gray;
+  font-style: italic;
+}
+
+.desk-message {
+  min-height: 142px;
+  border: 1px solid #00CCFF;;
+  border-radius: 5px;
+  background: #F8F8F8;
+  margin-left: 25%;
+  margin-bottom: 10px;
+}
+.triangle {
+  width: 0;
+  position: absolute;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 18px solid #00CCFF;
+  margin-left: -16px;
+  margin-top: 14px;
+  margin-left: -19px;
+}
+
+.desk-message .header {
+  border-bottom: 2px solid #00CCFF;
+  border-radius: 5px 5px 0 0;
+  background: #00CCFF;
+  color: white;
+  font-size: 16px;
+  margin-top: -1px;
+  padding: 5px;
+}
+.txt {
+  padding: 20px;
+}
+#group {width: 40%}
+
+.posted {
+  float: left;
+  padding: 20px;
+  background: #E4FCFF;
+  border-radius: 5px;
+  color: #0CF;
+  height: 100%;
+  margin-top: 40px;
+  text-align: center;
+  width: 147px;
+}
+
+.time {
+  text-align: center;
+  height: 20px;
+  width: 150px;
+  float: right;
+  margin-top: 1px;
+  background: #D5DDE4;
+  padding: 5px;
+  border-radius: 5px 0px 5px 0px;
+}
+
+.navbar-fixed-top .navbar-inner a {
+  color: white;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+textarea {
+  width: 300px;
+  height: 200px;
+}
+
+.order_group {
+  display: none;
+}
+
+/* Sidenav for Docs
+-------------------------------------------------- */
+
+.bs-docs-sidenav {
+  width: 228px;
+  margin: 30px 0 0;
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.bs-docs-sidenav > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 1px solid #e5e5e5;
+}
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  background-image: url(../img/glyphicons-halflings-white.png);
+  opacity: 1;
+}
+.bs-docs-sidenav.affix {
+  top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+.userspace {
+  float: right;
+  width: 500px;
+}
